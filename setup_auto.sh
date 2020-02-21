@@ -101,6 +101,7 @@ function reptile_init {
     	SYSTEM=${f:5:${#f}-13}
     done
 
+    SYSTEM="ubuntu"
     if [ "$SYSTEM" == "" ]; then
     	echo -e "Failed to detect Linux distro type\n"
     	exit
